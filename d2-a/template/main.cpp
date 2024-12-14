@@ -1,17 +1,15 @@
 #include <iostream>
-/*#include <vector>*/
-/*#include <string>*/
-/*#include <cmath>*/
-/*#include <algorithm>*/
-/*#include <unordered_map>*/
-/*#include <unordered_set>*/
+#include <vector>
+#include <string>
+#include <cmath>
+#include <algorithm>
+#include <unordered_map>
+#include <unordered_set>
 
 using namespace std;
 
 void fastIO();
 void solve();
-/*void solve2();*/
-/*void solve3();*/
 
 void solve() {
     int n;
