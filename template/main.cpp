@@ -13,8 +13,10 @@ g++ -std=c++17 main.cpp && ./a.out
 
 using namespace std;
 
-void fastIO();
 void solve();
+
+/*Helper functions*/
+void fastIO();
 int power(int base, int exponent);
 int factorial(int number);
 bool divisible(int number, int divisor);
@@ -32,6 +34,7 @@ int main(int argc, char* argv[]) {
     return 0;
 }
 
+/*Helper functions*/
 void fastIO() {
     // fast input/output
     ios_base::sync_with_stdio(false);
