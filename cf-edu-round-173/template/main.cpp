@@ -6,11 +6,6 @@
 #include <unordered_map>
 #include <unordered_set>
 
-
-/* To run:
-g++ -std=c++17 main.cpp && ./a.out
-*/
-
 using namespace std;
 
 void fastIO();
