@@ -14,8 +14,8 @@ void solve3();
 void solve4();
 
 // Constants
-const int MOD = 1e9 + 7;
-const int INF = 1e9 + 5;
+const int MOD = 1e9 + 7; // very large prime number often used for modular arithmetic
+const int INF = 1e9 + 5; // very large number that signifies "infinity" to differentiate between reachable and unreachable
 
 // Utility functionsj
 void fastIO();
@@ -33,13 +33,6 @@ void solve() {
     cin >> n;
 }
 
-/*
-********************************************************************************
-g++ -std=c++11 -O2 -Wall main.cpp && ./a.out
-g++ -std=c++17 -O2 -Wall main.cpp && ./a.out
-g++ -std=c++20 -O2 -Wall main.cpp && ./a.out
-********************************************************************************
-*/
 int main(int argc, char* argv[]) {
 
     fastIO();
