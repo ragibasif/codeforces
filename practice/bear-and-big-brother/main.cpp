@@ -9,9 +9,7 @@
 using namespace std;
 
 void solve();
-void solve2();
-void solve3();
-void solve4();
+int test();
 
 // Constants
 const int MOD = 1e9 + 7; // very large prime number often used for modular arithmetic
@@ -29,23 +27,46 @@ long long modularExponentiation(long long base, long long exponent, long long mo
 
 
 void solve() {
-    int n;
-    cin >> n;
+    long long a,b;
+    cin >> a >> b;
+    long long result = 0;
+    while (a <= b) {
+        result++;
+        a = a * 3;
+        b = b * 2;
+    }
+    cout << result << endl;
 }
 
-int main(int argc, char* argv[]) {
 
+
+int main(int argc, char* argv[]) {
     fastIO();
+
+    // Uncomment for testing. Comment for submitting.
+    /*test();*/
+
+    // Uncomment for submitting. Comment for testing.
+    solve();
+
+    return 0;
+}
+
+int test() {
     int t;
-    cin >> t; // number of test cases
+    if (!(cin >> t)) {
+        cerr << "Error: Unable to read the number of test cases\n";
+        return 1;
+    }
+
     while (t--) {
-        // will run as long as t is greater than 0
         solve();
     }
     return 0;
 }
 
-/*Helper functions*/
+
+/*Utility functions*/
 void fastIO() {
     // fast input/output
     ios_base::sync_with_stdio(false);

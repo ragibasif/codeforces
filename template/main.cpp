@@ -10,6 +10,7 @@
 using namespace std;
 
 void solve();
+int test();
 
 // Constants
 const int MOD = 1e9 + 7; // very large prime number often used for modular arithmetic
@@ -32,26 +33,31 @@ void solve() {
 }
 
 int main(int argc, char* argv[]) {
+    fastIO();
 
-    if (argc > 1) {
-        // Check if input file is provided
-        ifstream inputFile(argv[1]);
-        if (!inputFile.is_open()) {
-            cerr << "Error: Unable to open file " << argv[1] << "\n";
-            return 1;
-        }
-        cin.rdbuf(inputFile.rdbuf()); // Redirect cin to read from the file
+    // Uncomment for testing. Comment for submitting.
+    /*test();*/
+
+    // Uncomment for submitting. Comment for testing.
+    solve();
+
+    return 0;
+}
+
+int test() {
+    int t;
+    if (!(cin >> t)) {
+        cerr << "Error: Unable to read the number of test cases\n";
+        return 1;
     }
 
-    fastIO();
-    int t;
-    cin >> t; // number of test cases
     while (t--) {
-        // will run as long as t is greater than 0
         solve();
     }
     return 0;
 }
+
+
 
 /*Helper functions*/
 void fastIO() {
