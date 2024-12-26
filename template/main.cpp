@@ -20,10 +20,12 @@ void fastIO();
 int power(int base, int exponent);
 int factorial(int number);
 bool divisible(int number, int divisor);
+int lastNum(int number);
 
 void solve() {
     int n;
     cin >> n;
+    cout << lastNum(n) << endl;
 }
 
 
@@ -71,4 +73,13 @@ int power(int base, int exponent) {
         result *= base;
     }
     return result;
+}
+
+// get the last digit of a given number (eg. 117 => 7, 234 => 4, 10 => 0)
+int lastNum(int number) {
+    while (number > 9) {
+        number %= 10;
+    }
+
+    return number;
 }
