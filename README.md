@@ -1,7 +1,7 @@
 # Codeforces
 
-- [codeforces.com](https://codeforces.com/)
+[codeforces.com](https://codeforces.com/)
 
-```bash
-g++ -std=c++17 main.cpp && ./a.out
+```sh
+cp -r template /path/to/file
 ```
