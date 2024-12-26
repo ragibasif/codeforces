@@ -1,5 +1,4 @@
 #include <iostream>
-#include <fstream>
 #include <vector>
 #include <string>
 #include <cmath>
@@ -10,6 +9,9 @@
 using namespace std;
 
 void solve();
+void solve2();
+void solve3();
+void solve4();
 
 // Constants
 const int MOD = 1e9 + 7; // very large prime number often used for modular arithmetic
@@ -32,16 +34,6 @@ void solve() {
 }
 
 int main(int argc, char* argv[]) {
-
-    if (argc > 1) {
-        // Check if input file is provided
-        ifstream inputFile(argv[1]);
-        if (!inputFile.is_open()) {
-            cerr << "Error: Unable to open file " << argv[1] << "\n";
-            return 1;
-        }
-        cin.rdbuf(inputFile.rdbuf()); // Redirect cin to read from the file
-    }
 
     fastIO();
     int t;
