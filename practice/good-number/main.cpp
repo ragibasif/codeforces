@@ -10,13 +10,13 @@
 using namespace std;
 
 void solve();
-void test();
+int test();
 
 // Constants
 const int MOD = 1e9 + 7; // very large prime number often used for modular arithmetic
 const int INF = 1e9 + 5; // very large number that signifies "infinity" to differentiate between reachable and unreachable
 
-// Utility functions
+// Utility functionsj
 void fastIO();
 long long power(long long base, long long exponent);
 long long factorial(long long number);
@@ -28,7 +28,37 @@ long long modularExponentiation(long long base, long long exponent, long long mo
 
 
 void solve() {
-    /*Program logic goes here*/
+    int n,k;
+    cin >> n >> k;
+    vector<long long> nums;
+    for (int i = 0; i < n; i++) {
+        long long temp;
+        cin >> temp;
+        nums.push_back(temp);
+    }
+    unordered_map<int,bool> hashmap;
+    for (int j = 0; j <= k; j++) {
+         hashmap[j] = true;
+    }
+
+    int counter = 0;
+    for (int l = 0; l < n; l++) {
+        bool flag = true;
+        if (nums[l] <= 9) {
+            flag = false;
+        }
+        while (nums[l] > 9) {
+            long long temp = nums[l];
+            if (hashmap.find(lastDigit(temp)) == hashmap.end()) {
+                flag = false;
+            }
+            nums[l] /= 10;
+        }
+        if (flag) {
+            counter++;
+        }
+    }
+    cout << counter << endl;
 }
 
 int main(int argc, char* argv[]) {
@@ -43,17 +73,22 @@ int main(int argc, char* argv[]) {
     return 0;
 }
 
-void test() {
+int test() {
     int t;
+    if (!(cin >> t)) {
+        cerr << "Error: Unable to read the number of test cases\n";
+        return 1;
+    }
 
     while (t--) {
         solve();
     }
+    return 0;
 }
 
 
 
-/*Utility functions*/
+/*Helper functions*/
 void fastIO() {
     // fast input/output
     ios_base::sync_with_stdio(false);
