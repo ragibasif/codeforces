@@ -14,6 +14,7 @@ void test();
 // Constants
 const int MOD = 1e9 + 7; // very large prime number often used for modular arithmetic
 const int INF = 1e9 + 5; // very large number that signifies "infinity" to differentiate between reachable and unreachable
+const int DIV = 1e12; // very large number used as a default argument for generating divisors
 
 // Utility functions
 void fastIO();
@@ -24,10 +25,11 @@ long long lastDigit(long long number);
 long long gcd(long long a, long long b);
 long long lcm(long long a, long long b);
 long long modularExponentiation(long long base, long long exponent, long long mod);
+vector<long long> generateDivisors(long long n = (long long) (DIV));
 
 
 void solve() {
-    /*Program logic goes here*/
+    cout << "Program logic starts here." << endl;
 }
 
 int main(int argc, char* argv[]) {
@@ -38,6 +40,7 @@ int main(int argc, char* argv[]) {
 
     // Uncomment for submitting. Comment for testing.
     solve();
+    cout << endl;
 
     return 0;
 }
@@ -131,3 +134,16 @@ long long modularExponentiation(long long base, long long exponent, long long mo
 }
 
 
+// generate all the divisors of the given number
+vector<long long> generateDivisors(long long n) {
+  vector<long long> v;
+  long long i = 1;
+  for (; i * i < n; ++i)
+    if (n % i == 0) {
+      v.push_back(i), v.push_back(n / i);
+    }
+  if (i * i == n)
+    v.push_back(i);
+
+  return v;
+}
