@@ -29,7 +29,12 @@ vector<long long> generateDivisors(long long n = (long long) (DIV));
 
 
 void solve() {
-    cout << "Program logic starts here." << endl;
+    int n;
+    cin >> n;
+    if (n % 2 != 0 || n < 4)
+        cout << "NO" << endl;
+    else
+        cout << "YES" << endl;
 }
 
 int main(int argc, char* argv[]) {
