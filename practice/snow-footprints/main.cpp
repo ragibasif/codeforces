@@ -29,7 +29,10 @@ vector<long long> generateDivisors(long long n = (long long) (DIV));
 
 
 void solve() {
-    cout << "Program logic starts here." << endl;
+    int n;
+    cin >> n;
+    vector<char> v(n);
+    for (int i = 0; i < )
 }
 
 int main(int argc, char* argv[]) {

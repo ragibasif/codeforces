@@ -89,9 +89,5 @@ int power(int base, int exponent) {
 
 // get the last digit of a given number (eg. 117 => 7, 234 => 4, 10 => 0)
 int lastNum(int number) {
-    while (number > 9) {
-        number %= 10;
-    }
-
-    return number;
+    return number %= 10;
 }
