@@ -1,20 +1,27 @@
+# Variables
+
 # Compiler and flags
 CXX = g++
-CXXFLAGS = -std=c++17 -O2 -Wall -Wextra -Wshadow
+CXXFLAGS = -std=c++17 -Wshadow -Wall -Wextra
 
-# Source file and executable
-SRC = main.cpp
-EXE = main
+SRC = main.cpp # Source file(s)
+TARGET = app   # Name of the output executable
+
+# Build configurations
+RELEASE_FLAGS = -O2 -Wno-unused-result
+DEBUG_FLAGS = -g -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG
 
 # Targets
-all: $(EXE)
+.PHONY: all clean
 
-$(EXE): $(SRC)
-	$(CXX) $(CXXFLAGS) $(SRC) -o $(EXE)
+all: release
 
-run: $(EXE)
-	./$(EXE)
+release: $(SRC)
+	$(CXX) $(CXXFLAGS) $(RELEASE_FLAGS) -o $(TARGET) $(SRC)
+
+debug: $(SRC)
+	$(CXX) $(CXXFLAGS) $(DEBUG_FLAGS) -o $(TARGET) $(SRC)
 
 clean:
-	rm -f $(EXE)
+	rm -f $(TARGET)
 
