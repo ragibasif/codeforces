@@ -1,7 +1,5 @@
 # Codeforces
 
-[codeforces.com](https://codeforces.com/)
+**DEPRECATED**
 
-```sh
-cp -r template /path/to/file
-```
+Migrated to -> [10k](https://github.com/ragibasif/10k)
